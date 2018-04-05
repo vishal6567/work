@@ -1,16 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var mysql = require('mysql');
+
 var dateTime = require('node-datetime');
 var dt = dateTime.create();
 dt.format('m/d/Y');
-
-var db = mysql.createPool({
-	host: 'localhost',
-	user: 'root',
-	password: 'password',
-	database: 'employee'
-});
+const appRoot = require('app-root-path');
+const db = require(`${appRoot}/db`); 
 
 router.post('/expenseType', function (req, res, next) {
   console.log("body" + (JSON.stringify(req.body.expensetype)));

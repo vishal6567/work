@@ -1,0 +1,71 @@
+<form>
+  <fieldset>
+      <div class="form-group">
+        <label for="inputExpensetyp" class="col-lg-2 control-label">Expense Detail</label>
+          <div class="row">
+            <div class="col">
+                <div class="col-lg-5">
+                    <select >
+                        <option>Expense Type</option>
+                        <option *ngFor="let type of expensetype" value="{{type.expense_type}}">{{type.expense_type}}</option>
+                    </select>
+               </div>
+            </div>
+            <div class="col">
+                <div class="col-lg-5">
+                  <input type="date" name="date" placeholder="Create Expense Date" class="form-control">
+               </div>
+            </div>
+            <div class="col">
+                <div class="col-lg-5">
+                  <input type="text" name="" placeholder="Vendor Name" class="form-control">
+               </div>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col">
+                  <div class="col-lg-5">
+                    <input type="text" name="amount" placeholder="Amount" class="form-control">
+                 </div>
+              </div>
+              <div class="col">
+                  <div class="col-lg-5">
+                    <input type="text" name="domestic" placeholder="Domestic" class="form-control">
+                 </div>
+              </div>
+              <div class="col">
+                  <div class="col-lg-5">
+                    <input type="text" name="buss" placeholder="Business Purpose" class="form-control">
+                 </div>
+              </div>
+            </div>
+          <div class="row">
+              <div class="col">
+                 <div class="col-lg-5">
+                   <input type="text" name="city-state" placeholder="city&state" class="form-control">
+                 </div>
+              </div>
+              <div class="col">
+                <div class="col-lg-5">
+                  <input type="text" name="department" placeholder="Department" class="form-control">
+                 </div>
+              </div>
+              <div class="col">
+                <div class="col-lg-5">
+                  <select >
+                    <option>Payment Type</option>
+                       <option>name</option>
+                    </select>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="col-lg-5">
+                <input type="textarea" name="comment" placeholder="Comment" class="form-control">
+               </div>
+            </div>
+          </div>
+      </div>
+  </fieldset>
+</form>

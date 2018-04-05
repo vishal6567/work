@@ -14,7 +14,7 @@ export class ExpensetypeViewComponent implements OnInit {
   constructor(private userService: UserService,
               private toasteService: ToasteService,
               public toastr: ToastsManager, vcr: ViewContainerRef) {
-                this.toastr.setRootViewContainerRef(vcr)}
+                this.toastr.setRootViewContainerRef(vcr); }
   getExpensetype(): void {
     this.userService.getExpensetype()
         .subscribe(
@@ -27,10 +27,11 @@ export class ExpensetypeViewComponent implements OnInit {
       this.userService.deleteExpensetype(expensetype).subscribe(
          data => {
            console.log('sucess', data);
-           this.toasteService.success('wdedw');
+           this.toasteService.success('Delete');
          },
          error => {
            console.log('Error deleting employee!');
+           this.toasteService.Error('Delete');
          }
       );
       this.getExpensetype();
@@ -38,7 +39,6 @@ export class ExpensetypeViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.toasteService.success('dwadqd');
     this.getExpensetype();
   }
 
