@@ -1,5 +1,6 @@
 export class Detail {
-    expensetype: any;
+    id: number;
+    expense_type: any;
     create_date: any;
     vendor_name: string;
     amount: number;

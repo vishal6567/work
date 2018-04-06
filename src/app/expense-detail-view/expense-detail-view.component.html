@@ -1,3 +1,41 @@
-<p>
-  expense-detail-view works!
-</p>
+<body>
+  <table class="table table-sm table-dark">
+    <thead>
+      <h3>Expense Detail</h3>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Expense Type</th>
+        <th scope="col">create_date</th>
+        <th scope="col">vendor_name</th>
+        <th scope="col">amount</th>
+        <th scope="col">domestic</th>
+        <th scope="col">business_purpos</th>
+        <th scope="col">city_state</th>
+        <th scope="col">deparment</th>
+        <th scope="col">payment</th>
+        <th scope="col">comment</th>
+      </tr>
+    </thead>
+    
+    <tbody *ngFor = "let expensedtl of expenseDetail">
+        
+      <tr>
+        <th>{{expensedtl.id}}</th>
+        <td>{{expensedtl.expense_type}}</td>
+        <td>{{expensedtl.create_date}}</td>
+        <td>{{expensedtl.vendor_name}}</td>
+        <td>{{expensedtl.amount}}</td>
+        <td>{{expensedtl.domestic}}</td>
+        <td>{{expensedtl.business_purpos}}</td>
+        <td>{{expensedtl.city_state}}</td>
+        <td>{{expensedtl.deparment}}</td>
+        <td>{{expensedtl.payment}}</td>
+        <td>{{expensedtl.comment}}</td>
+        <a [routerLink]="['/expense-detail-id',expensedtl.id]" routerLinkActive="active" >
+          <input type="button"  value="Edit" class="btn btn-success">
+        </a>
+        <input type="button" (click) = "deleteExpenseDetail(expensedtl.id)" value="Delete" class="btn btn-danger">
+      </tr>    
+    </tbody>
+  </table>
+</body>

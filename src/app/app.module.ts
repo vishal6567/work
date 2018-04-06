@@ -15,6 +15,7 @@ import { ToasteService } from './services/toaste.service';
 import { ViewContainerRef } from '@angular/core';
 import { ExpenseDetailComponent } from './expense-detail/expense-detail.component';
 import { ExpenseDetailViewComponent } from './expense-detail-view/expense-detail-view.component';
+import { ExpenseDetailEditComponent } from './expense-detail-edit/expense-detail-edit.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ExpenseDetailViewComponent } from './expense-detail-view/expense-detail
     ExpenseTypeComponent,
     ExpensetypeViewComponent,
     ExpenseDetailComponent,
-    ExpenseDetailViewComponent
+    ExpenseDetailViewComponent,
+    ExpenseDetailEditComponent
   ],
   imports: [ BrowserAnimationsModule, ToastModule.forRoot(),
   BrowserModule, FormsModule, HttpModule, expenseRouting],
