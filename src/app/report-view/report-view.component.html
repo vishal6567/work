@@ -1,5 +1,8 @@
 <body>
+    
     <table class="table table-sm table-dark">
+        <div>
+            <input type="text"[(ngModel)]="term" placeholder="Search">
       <thead>
         <h3>report Detail</h3>
         <tr>
@@ -14,9 +17,8 @@
           <th scope="col">comment</th>
         </tr>
       </thead>
-      
-      <tbody *ngFor = "let report of reportDetail">
-          
+      <div *ngFor = "let report of reportDetail |filter:term">
+      <tbody>
         <tr>
           <th>{{report.id}}</th>
           <td>{{report.expense_type}}</td>
@@ -31,7 +33,9 @@
             <input type="button"  value="Edit" class="btn btn-success">
           </a>
           <input type="button" (click) = "deleteReportDetail(report.id)" value="Delete" class="btn btn-danger">
-        </tr>    
+        </tr>   
       </tbody>
+    </div> 
+      </div>
     </table>
   </body>

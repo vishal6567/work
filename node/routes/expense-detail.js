@@ -1,13 +1,14 @@
 var express = require('express');
 var router = express.Router();
+var authenti = require('../middlewares/authenti');
 const appRoot = require('app-root-path');
 const db = require(`${appRoot}/db`);
 var dateTime = require('node-datetime');
 var dt = dateTime.create();
-var dat = dt.format('MM/DD/YYYY');
-router.get('/getExpetype', function (req, res, next) {
+var dat = dt.format('MM/dd/yyyy');
+router.get('/getExpetype', authenti.is_login, function (req, res, next) {
 	db.getConnection(function (err, connection) {
-		connection.query('select * from NewTable', function (err, rows) {
+		connection.query('select * from newtable', function (err, rows) {
 			if (err) throw err;
 			else {
 				console.log(rows);
@@ -17,7 +18,7 @@ router.get('/getExpetype', function (req, res, next) {
 		connection.release();
 	});
 })
-router.post('/expenseDetail', function (req, res, next) {
+router.post('/expenseDetail', authenti.is_login, function (req, res, next) {
 	console.log("body" + (JSON.stringify(req.body)));
 	dat = req.body.create_date;
     db.getConnection(function (error, conn) {
@@ -34,7 +35,7 @@ router.post('/expenseDetail', function (req, res, next) {
 		  })
 	 })
 })
-router.get('/getExpenseDetail', function (req, res, next) {
+router.get('/getExpenseDetail', authenti.is_login, function (req, res, next) {
 	db.getConnection(function (err, connection) {
 		connection.query('select * from expense_detail', function (err, rows) {
 			if (err) throw err;
@@ -46,7 +47,7 @@ router.get('/getExpenseDetail', function (req, res, next) {
 		connection.release();
 	});
 })
-router.delete('/expenseDetailDelete/:id', function (req, res, next) {
+router.delete('/expenseDetailDelete/:id', authenti.is_login, function (req, res, next) {
 	var user = { id: req.params.id }
 	console.log("delete", req.params.id );
 	db.getConnection(function (error, conn) {
@@ -61,7 +62,7 @@ router.delete('/expenseDetailDelete/:id', function (req, res, next) {
 		})
 	})
 })
-router.get('/expenseDetailId/:id', function (req, res, next) {
+router.get('/expenseDetailId/:id', authenti.is_login, function (req, res, next) {
 	db.getConnection(function (error, conn) {
 		console.log("params", req.params.id);
 		var sql = "SELECT * FROM  expense_detail where id = " + req.params.id;
@@ -76,7 +77,7 @@ router.get('/expenseDetailId/:id', function (req, res, next) {
 		})
 	})
 })
-router.put('/updateExpenseDetail/:id',function (req, res, next) {
+router.put('/updateExpenseDetail/:id', authenti.is_login, function (req, res, next) {
 	console.log("body" + (JSON.stringify(req.body)));
 	db.getConnection(function (error, conn) {																																																																			
 		conn.query('UPDATE expense_detail SET expense_type=?, create_date=?, vendor_name=?, amount=?, domestic=? ,business_purpos= ? ,city_state=?, deparment=?,  payment=?, comment=? WHERE id = ' + req.params.id, [req.body.etexpense_type, req.body.create_date, req.body.vendor_name, req.body.amount, req.body.domestic, req.body.business_purpos, req.body.city_state, req.body.deparment, req.body.payment, req.body.comment], function (err, result) {
