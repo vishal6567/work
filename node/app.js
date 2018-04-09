@@ -14,6 +14,7 @@ const db = require(`${appRoot}/db`);
 var index = require('./routes/index');
 var users = require('./routes/users');
 var detail = require('./routes/expense-detail'); 
+var report = require('./routes/report');
 var app = express();
 var cors = require('cors');
 
@@ -29,5 +30,5 @@ app.use(cookieParser());
 app.use('/', index);
 app.use('/user', users);
 app.use('/detail', detail);
-
+app.use('/report', report);
 module.exports = app;

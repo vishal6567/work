@@ -1,0 +1,37 @@
+<body>
+    <table class="table table-sm table-dark">
+      <thead>
+        <h3>report Detail</h3>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Expense Type</th>
+          <th scope="col">create_date</th>
+          <th scope="col">business_purpos</th>
+          <th scope="col">report_date</th>
+          <th scope="col">amount</th>
+          <th scope="col">invoice</th>
+          <th scope="col">payment</th>
+          <th scope="col">comment</th>
+        </tr>
+      </thead>
+      
+      <tbody *ngFor = "let report of reportDetail">
+          
+        <tr>
+          <th>{{report.id}}</th>
+          <td>{{report.expense_type}}</td>
+          <td>{{report.create_date}}</td>
+          <td>{{report.business_purpos}}</td>
+          <td>{{report.report_date}}</td>
+          <td>{{report.amount}}</td>
+          <td>{{report.invoice}}</td>
+          <td>{{report.payment}}</td>
+          <td>{{report.comment}}</td>
+          <a [routerLink]="['/report-detail-id',report.id]" routerLinkActive="active" >
+            <input type="button"  value="Edit" class="btn btn-success">
+          </a>
+          <input type="button" (click) = "deleteReportDetail(report.id)" value="Delete" class="btn btn-danger">
+        </tr>    
+      </tbody>
+    </table>
+  </body>

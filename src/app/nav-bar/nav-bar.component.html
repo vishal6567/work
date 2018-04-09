@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a routerLink="/home"><button class="dropbtn">Home</button></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+        <div class="dropdown">
+            <button class="dropbtn">DeshBord</button>
+            <div class="dropdown-content">
+                <a routerLink="/expensetypeview" routerLinkActive="active"> Expense Type </a>
+                <a routerLink="/expense-detail-view" routerLinkActive="active"> Expense Detail </a>
+                <a routerLink="/report-view" routerLinkActive="active"> Report </a>
+            </div>
+          </div>
+          <div class="dropdown">
+              <button class="dropbtn">Register</button>
+              <div class="dropdown-content">
+                  <a routerLink="/expensetype" routerLinkActive="active">Expense Type</a> 
+                  <a routerLink="/expense-detail" routerLinkActive="active">Expense Detail</a> 
+                  <a routerLink="/report" routerLinkActive="active">Report</a>
+              </div>
+            </div>
+     <!-- <li class="nav-item"><a routerLink="/display" routerLinkActive="active"> profile </a> </li>
+  
+     <li class="nav-item"><a routerLink="/add" routerLinkActive="active">company</a> </li>
+    
+     <li class="nav-item"><a routerLink="/admin-add" routerLinkActive="active">admin</a> </li>!-->
+     <!--<a routerLink="/change"><button class="dropbtn">change password</button></a>
+     <a routerLink="/logout"><button class="dropbtn">Logout</button></a>!-->
+     <!--<li class="nav-item"><a routerLink="/logout">Logout</a></li>!-->
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
