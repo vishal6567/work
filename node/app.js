@@ -15,6 +15,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var detail = require('./routes/expense-detail'); 
 var report = require('./routes/report');
+var search = require('./router/search');
 var app = express();
 var cors = require('cors');
 
@@ -31,4 +32,5 @@ app.use('/', index);
 app.use('/user', users);
 app.use('/detail', detail);
 app.use('/report', report);
+app.use('/search', search);
 module.exports = app;
