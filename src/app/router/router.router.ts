@@ -10,7 +10,8 @@ import { ReportEditComponent} from '../report-edit/report-edit.component';
 import { LoginComponent } from '../login/login.component';
 import { AuthGuard } from '../guards/auth.guards';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
-import { LogoutComponent } from '../logout/logout.component';
+import { ChangePassComponent } from '../change-pass/change-pass.component';
+import { HomeComponent } from '../home/home.component';
 const expenseRoutes: Routes = [
     { path: '', component: LoginComponent, pathMatch: 'full' },
     { path: 'expensetype', component: ExpenseTypeComponent, canActivate: [AuthGuard], pathMatch: 'full' },
@@ -22,6 +23,7 @@ const expenseRoutes: Routes = [
     { path: 'report-view', component: ReportViewComponent, canActivate: [AuthGuard], pathMatch: 'full' },
     { path: 'report-detail-id/:id', component: ReportEditComponent, canActivate: [AuthGuard], pathMatch: 'full' },
     { path: 'nav-bar', component: NavBarComponent, canActivate: [AuthGuard], pathMatch: 'full' },
-    { path: 'logout', component: LogoutComponent, canActivate: [AuthGuard], pathMatch: 'full' }
+    { path: 'chapass', component: ChangePassComponent, canActivate: [AuthGuard], pathMatch: 'full' },
+    { path: 'home', component: HomeComponent, canActivate: [AuthGuard], pathMatch: 'full' }
 ];
 export const expenseRouting = RouterModule.forRoot(expenseRoutes);

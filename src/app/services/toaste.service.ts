@@ -6,14 +6,12 @@ import { ViewContainerRef } from '@angular/core';
 @Injectable()
 export class ToasteService {
 private KeepAfterRouteChange = false;
-  constructor(public toastr: ToastsManager
-               ) {
-             }
+  constructor(public toastr: ToastsManager) { }
   success(msg, KeepAfterRouteChange = false) {
-    this.toastr.success(msg, 'Success', '');
+    this.toastr.success('Success', 'Success', {toastLife: 100});
    }
    Error(msg) {
-    this.toastr.error('This is not good!', 'Oops!', {toastLife: 10000});
+    this.toastr.error('Not Success!', 'Wrong!', {toastLife: 1000});
   }
   Warning(msg) {
     this.toastr.warning('You are being warned.', 'Alert!');

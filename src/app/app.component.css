@@ -1,0 +1,9 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 100%;
+	background-image: url(/assets/images/banner.jpg);
+	
+	
+	height: 650px;
+	text-align: center;
+}

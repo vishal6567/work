@@ -1,9 +1,20 @@
-body{
-    background:black;
-    
+table{
+    color: ivory;
+    margin: 0em auto 0;
+	width: 50%;
+	background: rgba(0, 0, 0, 0.70);
+	padding: 2.3em 2em;    
 }
 tr:hover
 {
     background-color:indianred;
     cursor: pointer;
+}
+h2 {
+	color: blueviolet;
+	font-weight: 100;
+	font-size: 25px;
+	margin-bottom: 1em;
+	letter-spacing: 2px;
+	font-family: 'Montserrat', sans-serif;
 }

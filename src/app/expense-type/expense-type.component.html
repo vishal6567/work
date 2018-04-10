@@ -1,9 +1,9 @@
-
-  <form name="form" (ngSubmit) = "f.form.valid && createExpensetype()" class="form-horizontal col-lg-6" #f="ngForm" novalidate>
+  
+  <form name="form" (ngSubmit) = "f.form.valid && createExpensetype()" class="main-w3layouts-form" #f="ngForm" novalidate>
       <fieldset>
+          <h2>Expense Type</h2>
     <div class="form-group">
-      <label for="inputExpensetyp" class="col-lg-2 control-label">Expense Typr</label>
-      <div class="col-lg-10">
+      <div class="fields-w3-agileits">
         <input type="text" [(ngModel)] = "register.expensetype" id="inputExpensetyp" placeholder="Name" require name="expensetyp"  class="form-control">
       </div>
     </div>

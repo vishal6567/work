@@ -1,62 +1,67 @@
-<form name="form" (ngSubmit) = "f.form.valid && createReport()" #f="ngForm" novalidate>
+
+<form name="form" (ngSubmit) = "f.form.valid && createReport()" #f="ngForm" novalidate class="main-w3layouts-form">
   <fieldset>
+    <h2>Report Detail</h2>
       <div class="form-group">
-        <label for="inputExpensetyp" class="col-lg-2 control-label">Expense Detail</label>
           <div class="row">
             <div class="col">
-                <div class="col-lg-5">
-                    <select [(ngModel)]="register.expense_type" [ngModelOptions]="{standalone: true}">
+                <div class="fields-w3-agileits">
+                    <select [(ngModel)]="register.expense_type" [ngModelOptions]="{standalone: true}"require #select="ngModel" >
                         <option *ngFor="let type of expensetype" name="expensetype" value="{{type.expense_type}}">{{type.expense_type}}</option>
                     </select>
-                   <!--<div *ngIf="expensetype.required" class="help-block">expense_type is required</div>!-->
+                   <div *ngIf="f.submitted && !select.valid" class="help-block">expense_type is required</div>
                </div>
             </div>
             <div class="col">
-                <div class="col-lg-5">
-                  <input type="date" [(ngModel)]="register.create_date" name="create_date" placeholder="Create Expense Date" class="form-control">
+                <div class="fields-w3-agileits">
+                    <input placeholder=" Expense Create Date" [(ngModel)]="register.create_date" class="form-control" type="text" onfocus="(this.type='date')" name="create_date" id="date">
+                 <!-- <input type="date" [(ngModel)]="register.create_date" name="create_date" placeholder="Create Expense Date" class="form-control">!-->
                  <!-- <div *ngIf="create_date.required" class="help-block"> date is required</div>!-->
                 </div>
             </div>
             <div class="col">
-                <div class="col-lg-5">
-                    <input type="text" [(ngModel)]="register.business_purpos" name="business_purpos" placeholder="Business Purpose" class="form-control">
-                    <!--<div *ngIf=" business_purpos.required" class="help-block"> business is required</div>!-->
+                <div class="fields-w3-agileits">
+                    <input type="text" [(ngModel)]="register.business_purpos" require name="business_purpos"#business="ngModel" placeholder="Business Purpose" class="form-control">
+                    <div *ngIf="f.submitted && !business.valid" class="help-block"> business is required</div>
                   </div>
             </div>
           </div>
           <div class="row">
               <div class="col">
-                  <div class="col-lg-5">
-                    <input type="date" [(ngModel)]="register.report_date" name="report_date" placeholder="Create Expense Date" class="form-control">
+                  <div class="fields-w3-agileits">
+                      <input placeholder=" Report Date" [(ngModel)]="register.report_date" class="form-control" type="text" onfocus="(this.type='date')" name="report_date" id="date">
+                    <!--<input type="date" [(ngModel)]="register.report_date" name="report_date" placeholder="Create Expense Date" class="form-control">!-->
                    <!-- <div *ngIf="report_date.required" class="help-block"> date is required</div>!-->
                   </div>
               </div>
               <div class="col">
-                  <div class="col-lg-5">
+                  <div class="fields-w3-agileits">
                     <input type="text" [(ngModel)]="register.amount" name="amount" placeholder="Amount" class="form-control">
                     <!--<div *ngIf="amount.required" class="help-block"> Amount is required</div>!-->
                   </div>
               </div>
               <div class="col">
-                  <div class="col-lg-5">
+                  <div class="fields-w3-agileits">
                     <input type="text" [(ngModel)]="register.invoice" name="invoice" placeholder="Invoice" class="form-control">
                  </div>
               </div>
             </div>
           <div class="row">
               <div class="col">
-                <div class="col-lg-5">
+                  <div class="fields-w3-agileits">
                   <select name = "payment" [(ngModel)]="register.payment" [ngModelOptions]="{standalone: true}">
                     <option >Payment Type</option>
                        <option>cash</option>
-                       <option>online</option>
+                       <option>net banking</option>
+                       <option>card</option>
+                       <option>other.</option>
                     </select>
                    <!-- <div *ngIf=" payment.required" class="help-block"> payment is required</div>!-->
                   </div>
             </div>
             <div class="col">
-              <div class="col-lg-5">
-                <input type="textarea" [(ngModel)]="register.comment" name="comment" placeholder="Comment" class="form-control">
+                <div class="fields-w3-agileits">
+                <input type="text" [(ngModel)]="register.comment" name="comment" placeholder="Comment" class="form-control">
                 
               </div>
             </div>

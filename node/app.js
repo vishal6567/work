@@ -16,6 +16,7 @@ var users = require('./routes/users');
 var detail = require('./routes/expense-detail'); 
 var report = require('./routes/report');
 var login = require('./routes/login');
+var chanpass = require('./routes/change-pass'); 
 var app = express();
 var cors = require('cors');
 
@@ -33,5 +34,5 @@ app.use('/user', users);
 app.use('/detail', detail);
 app.use('/report', report);
 app.use('/login', login);
-
+app.use('/chanpass', chanpass);
 module.exports = app;

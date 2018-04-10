@@ -1,10 +1,11 @@
-<form name="form" (ngSubmit) = "f.form.valid && updateReportDetail(editReport,etid)" #f="ngForm" novalidate>
+
+<form name="form" (ngSubmit) = "f.form.valid && updateReportDetail(editReport,etid)" #f="ngForm" novalidate  class="main-w3layouts-form">
   <fieldset>
+    <h2>Update Report Detail</h2>
       <div class="form-group">
-        <label for="inputExpensetyp" class="col-lg-2 control-label">Expense Detail Update</label>
           <div class="row">
             <div class="col">
-                <div class="col-lg-5">
+                <div class="fields-w3-agileits">
                     <label>Expense Type</label>
                     <select [(ngModel)]="etexpense_type" [ngModelOptions]="{standalone: true}">
                         <option *ngFor="let type of expensetype" name="expense_type" value="{{type.expense_type}}">{{type.expense_type}}</option>
@@ -13,13 +14,13 @@
                </div>
             </div>
             <div class="col">
-                <div class="col-lg-5">
+                <div class="fields-w3-agileits">
                   <label>Expense Date</label>
                   <input type="date" [(ngModel)]="etcreate_date" name="create_date" placeholder="Create Expense Date" class="form-control">
                </div>
             </div>
             <div class="col">
-                <div class="col-lg-5">
+                <div class="fields-w3-agileits">
                     <label>Report Date</label>
                   <input type="date" [(ngModel)]="etreport_date" name="report_report"  class="form-control">
                </div>
@@ -28,13 +29,13 @@
         
           <div class="row">
               <div class="col">
-                  <div class="col-lg-5">
+                  <div class="fields-w3-agileits">
                       <label>Amount</label>
                     <input type="text" [(ngModel)]="etamount" name="amount" placeholder="Amount" class="form-control">
                  </div>
               </div>
               <div class="col">
-                  <div class="col-lg-5">
+                  <div class="fields-w3-agileits">
                       <label>Business Purpos</label>
                     <input type="text" [(ngModel)]="etbusiness_purpos" name="business_purpos" placeholder="Business Purpose" class="form-control">
                  </div>
@@ -42,13 +43,13 @@
             </div>
           <div class="row">
               <div class="col">
-                <div class="col-lg-5">
+                  <div class="fields-w3-agileits">
                     <label>Invoice No</label>
                   <input type="text" [(ngModel)]="etinvoice" name="invoice"  class="form-control">
                  </div>
               </div>
               <div class="col">
-                <div class="col-lg-5">
+                  <div class="fields-w3-agileits">
                     <label>Payment</label>
                   <select [(ngModel)]="etpayment" [ngModelOptions]="{standalone: true}">
                     <option>Payment Type</option>
@@ -60,7 +61,7 @@
           </div>
           <div class="row">
             <div class="col">
-              <div class="col-lg-5">
+                <div class="fields-w3-agileits">
                   <label>Comment</label>
                 <input type="textarea" [(ngModel)]="etcomment" name="comment" placeholder="Comment" class="form-control">
                </div>

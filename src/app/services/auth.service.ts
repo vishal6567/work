@@ -6,8 +6,20 @@ import 'rxjs/add/operator/map';
 export class AuthService {
     private _getURL = 'http://localhost:3000/login';
     constructor(private http: HttpClient ) { }
-    login(email: string, password: string) {
+    login(email: string, password: any) {
         return this.http.post<any>(this._getURL + '/login', { email: email, password: password })
+            .map(user => {
+                // login successful if there's a jwt token in the response
+                if (user) {
+                    // store user details and jwt token in local storage to keep user logged in between page refreshes
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                }
+
+                return user;
+            });
+    }
+    cha_pass( password: string) {
+        return this.http.post<any>(this._getURL + '/cha_pass/', {password: password })
             .map(user => {
                 // login successful if there's a jwt token in the response
                 if (user) {

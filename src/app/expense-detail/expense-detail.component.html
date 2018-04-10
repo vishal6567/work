@@ -1,23 +1,25 @@
-<form name="form" (ngSubmit) = "f.form.valid && createExpenseDetail()" #f="ngForm" novalidate>
+
+<form name="form" (ngSubmit) = "f.form.valid && createExpenseDetail()" #f="ngForm" class="main-w3layouts-form" novalidate >
   <fieldset>
+    <h2>Expense Detail</h2>
       <div class="form-group">
-        <label for="inputExpensetyp" class="col-lg-2 control-label">Expense Detail</label>
           <div class="row">
             <div class="col">
-                <div class="col-lg-5">
-                    <select [(ngModel)]="register.expense_type" [ngModelOptions]="{standalone: true}">
-                        <option *ngFor="let type of expensetype" name="expense_type" value="{{type.expense_type}}">{{type.expense_type}}</option>
+                <div class="fields-w3-agileits">
+                    <select [(ngModel)]="register.expense_type" [ngModelOptions]="{standalone: true}" >  
+                      <option *ngFor="let type of expensetype" name="expense_type" value="{{type.expense_type}}">{{type.expense_type}}</option>
                     </select>
                     <!--<div *ngIf="f.submitted && !expense_type.valid" class="help-block">expense_type is required</div>>!-->
                </div>
             </div>
             <div class="col">
-                <div class="col-lg-5">
-                  <input type="date" [(ngModel)]="register.create_date" name="create_date" placeholder="Create Expense Date" class="form-control">
+                <div class="fields-w3-agileits">
+                    <input placeholder="Create Date" [(ngModel)]="register.create_date" class="form-control" type="text" onfocus="(this.type='date')" name="create_date" id="date">
+                  <!--<input type="date" [(ngModel)]="register.create_date" name="create_date" placeholder="Create Expense Date" class="form-control">!-->
                </div>
             </div>
             <div class="col">
-                <div class="col-lg-5">
+                <div class="fields-w3-agileits">
                   <input type="text" [(ngModel)]="register.vendor_name" name="vendor_name" placeholder="Vendor Name" class="form-control">
                </div>
             </div>
@@ -25,46 +27,48 @@
         
           <div class="row">
               <div class="col">
-                  <div class="col-lg-5">
+                  <div class="fields-w3-agileits">
                     <input type="text" [(ngModel)]="register.amount" name="amount" placeholder="Amount" class="form-control">
                  </div>
               </div>
               <div class="col">
-                  <div class="col-lg-5">
+                  <div class="fields-w3-agileits">
                     <input type="text"[(ngModel)]="register.domestic" name="domestic" placeholder="Domestic" class="form-control">
                  </div>
               </div>
               <div class="col">
-                  <div class="col-lg-5">
+                  <div class="fields-w3-agileits">
                     <input type="text" [(ngModel)]="register.business_purpos" name="business_purpos" placeholder="Business Purpose" class="form-control">
                  </div>
               </div>
             </div>
           <div class="row">
               <div class="col">
-                 <div class="col-lg-5">
+                 <div class="fields-w3-agileits">
                    <input type="text"[(ngModel)]="register.city_state" name="city_state" placeholder="city&state" class="form-control">
                  </div>
               </div>
               <div class="col">
-                <div class="col-lg-5">
+                <div class="fields-w3-agileits">
                   <input type="text" [(ngModel)]="register.deparment" name="deparment" placeholder="Department" class="form-control">
                  </div>
               </div>
               <div class="col">
-                <div class="col-lg-5">
+                <div class="fields-w3-agileits">
                   <select [(ngModel)]="register.payment" [ngModelOptions]="{standalone: true}">
                     <option>Payment Type</option>
                        <option>cash</option>
-                       <option>online</option>
+                       <option>net bankin</option>
+                       <option>card</option>
+                       <option>other.</option>
                     </select>
                 </div>
             </div>
           </div>
           <div class="row">
             <div class="col">
-              <div class="col-lg-5">
-                <input type="textarea" [(ngModel)]="register.comment" name="comment" placeholder="Comment" class="form-control">
+              <div class="fields-w3-agileits">
+                <input type="text" [(ngModel)]="register.comment" name="comment" placeholder="Comment" class="form-control">
                </div>
             </div>
           </div>

@@ -1,8 +1,8 @@
-<div class="main-w3layouts-form">
-    <h2>Login to your account</h2>
-    <!-- main-w3layouts-form -->
-    <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
 
+    
+    <!-- main-w3layouts-form -->
+    <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate class="main-w3layouts-form">
+            <h2>Login to your account</h2>
         <div class="fields-w3-agileits">
             <span class="fa fa-user" aria-hidden="true"></span>
             <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required placeholder="Email"/>

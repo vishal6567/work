@@ -33,6 +33,7 @@ export class ExpenseDetailComponent implements OnInit, OnDestroy {
       this.router.navigate(['/expense-detail-view']);
    },
       error => { console.log('error'); } );
+      this.toasteService.Error('Expense Detail Add');
   }
   ngOnInit() {
     this.getExpensetype();

@@ -22,12 +22,14 @@ import { ToasteService } from './services/toaste.service';
 import { UserService } from './services/user.service';
 import { ExpenseDetailService } from './services/expenseDetail.service';
 import { ReportService } from './services/report.service';
+import { ChangePassService } from './services/changepass.service';
 import { ReportViewComponent } from './report-view/report-view.component';
 import { ReportEditComponent } from './report-edit/report-edit.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guards';
-import { LogoutComponent } from './logout/logout.component';
+import { ChangePassComponent } from './change-pass/change-pass.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,11 +43,12 @@ import { LogoutComponent } from './logout/logout.component';
     ReportEditComponent,
     NavBarComponent,
     LoginComponent,
-    LogoutComponent
+    ChangePassComponent,
+    HomeComponent
   ],
   imports: [ BrowserAnimationsModule, HttpClientModule, Ng2SearchPipeModule, ToastModule.forRoot(),
   BrowserModule, FormsModule, HttpModule, expenseRouting],
-  providers: [UserService, ToasteService, ExpenseDetailService, ReportService, AuthService, AuthGuard],
+  providers: [UserService, ChangePassService, ToasteService, ExpenseDetailService, ReportService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
