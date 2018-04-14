@@ -2,6 +2,7 @@
 <h2>Report Detail</h2>
     <table class="table">
         <div>
+            <i class="fa fa-search" style="font-size:20px;color:red"></i>
             <input type="text"[(ngModel)]="term" placeholder="Search">
       <thead>
         <tr>
@@ -29,9 +30,10 @@
           <td>{{report.payment}}</td>
           <td>{{report.comment}}</td>
           <a [routerLink]="['/report-detail-id',report.id]" routerLinkActive="active" >
-            <input type="button"  value="Edit" class="btn btn-success">
+            <i class="fa fa-pencil-square" style="font-size:30px;color:mediumseagreen"></i>
           </a>
-          <input type="button" (click) = "deleteReportDetail(report.id)" value="Delete" class="btn btn-danger">
+          <i class="fa fa-trash-o" style="font-size:30px;color:brown" (click) = "deleteReportDetail(report.id)"></i>
+        
         </tr>   
       </tbody>
     </div> 

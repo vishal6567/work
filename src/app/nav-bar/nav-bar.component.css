@@ -9,10 +9,14 @@
     width: 100px;
     margin-left: 5px;
 }
-
+.icon
+{
+    margin-right: 30px;
+}
 .dropdown {
     position: relative;
     display: inline-block;
+    margin-right: 30px;
 }
 
 .dropdown-content {

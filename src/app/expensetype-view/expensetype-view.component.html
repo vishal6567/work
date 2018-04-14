@@ -13,7 +13,8 @@
       <tr>
         <th scope="row">{{expense.date}}</th>
         <td>{{expense.expense_type}}</td>
-        <input type="button" (click) = "deleteExpensetype(expense.expense_type)" value="Delete" class="btn btn-danger">
+        <i class="fa fa-trash-o" style="font-size:48px;color:brown" (click) = "deleteExpensetype(expense.expense_type)"></i>
+       <!-- <input type="button" (click) = "deleteExpensetype(expense.expense_type)" value="Delete" class="btn btn-danger">!-->
       </tr>    
     </tbody>
   </table>

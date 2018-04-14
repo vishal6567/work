@@ -32,9 +32,9 @@
         <td>{{expensedtl.payment}}</td>
         <td>{{expensedtl.comment}}</td>
         <a [routerLink]="['/expense-detail-id',expensedtl.id]" routerLinkActive="active" >
-          <input type="button"  value="Edit" class="btn btn-success">
+          <i class="fa fa-pencil-square" style="font-size:30px;color:mediumseagreen"></i>
         </a>
-        <input type="button" (click) = "deleteExpenseDetail(expensedtl.id)" value="Delete" class="btn btn-danger">
+        <i class="fa fa-trash-o" style="font-size:30px;color:brown" (click) = "deleteExpenseDetail(expensedtl.id)"></i>
       </tr>    
     </tbody>
   </table>
